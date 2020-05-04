@@ -4,7 +4,7 @@ const register = require("./controllers/register");
 const signin = require("./controllers/signin");
 const getProfile = require("./controllers/getProfile");
 const findface = require("./controllers/findFace");
-
+require("dotenv").config();
 const bodyParser = require("body-parser");
 const app = express();
 const bcrypt = require("bcrypt");

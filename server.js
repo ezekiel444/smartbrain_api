@@ -31,7 +31,8 @@ app.get("/", (req, res) => {
     .then((data) => {
       res.json(data);
       console.log("its working");
-    });
+    })
+    .catch(console.log);
 });
 
 app.post("/register", (req, res) => {

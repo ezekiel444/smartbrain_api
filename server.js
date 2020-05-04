@@ -30,6 +30,7 @@ app.get("/", (req, res) => {
     .from("users")
     .then((data) => {
       res.json(data);
+      console.log("its working");
     });
 });
 

@@ -54,7 +54,7 @@ app.put("/findface", (req, res) => {
 // });
 
 app.listen(process.env.PORT || 5000, () =>
-  console.log(`server runing at port ${proces.env.PORT}`)
+  console.log(`server runing at port ${process.env.PORT}`)
 );
 
 /*

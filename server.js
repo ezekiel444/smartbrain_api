@@ -53,7 +53,11 @@ app.put("/findface", (req, res) => {
 //   findface.handleApiCall(req, res);
 // });
 
-app.listen(5000, () => console.log("server runing at port 5000"));
+console.log(process.env);
+
+app.listen(process.env.PORT || 5000, () =>
+  console.log(`server runing at port ${proces.env.PORT}`)
+);
 
 /*
 1 --> / home its working

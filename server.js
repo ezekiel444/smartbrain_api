@@ -4,23 +4,23 @@ const register = require("./controllers/register");
 const signin = require("./controllers/signin");
 const getProfile = require("./controllers/getProfile");
 const findface = require("./controllers/findFace");
+require("dotenv").config();
 
 const bodyParser = require("body-parser");
 const app = express();
+const knex = require("knex");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 app.use(bodyParser.json());
 app.use(cors());
 
-const knex = require("knex");
-
 const db = knex({
   client: "pg",
   connection: {
     host: "127.0.0.1",
-    user: "postgres",
-    password: "password",
+    user: process.env.USER,
+    password: process.env.PASSWORD,
     database: "smartbrain",
   },
 });
@@ -50,9 +50,7 @@ app.put("/findface", (req, res) => {
   findface.incrementUserFaceCount(req, res, db);
 });
 
-app.listen(process.env.PORT || 5000, () =>
-  console.log(`server runing at port ${process.env.PORT || 5000}`)
-);
+app.listen(process.env.PORT || 3000);
 
 // app.post("/findfaceurl", (req, res) => {
 //   findface.handleApiCall(req, res);

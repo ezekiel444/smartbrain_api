@@ -50,13 +50,13 @@ app.put("/findface", (req, res) => {
   findface.incrementUserFaceCount(req, res, db);
 });
 
+app.listen(process.env.PORT || 5000, () =>
+  console.log(`server runing at port ${process.env.PORT || 5000}`)
+);
+
 // app.post("/findfaceurl", (req, res) => {
 //   findface.handleApiCall(req, res);
 // });
-
-app.listen(process.env.PORT || 5000, () =>
-  console.log(`server runing at port ${process.env.PORT}`)
-);
 
 /*
 1 --> / home its working

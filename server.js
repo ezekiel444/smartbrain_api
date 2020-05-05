@@ -25,15 +25,15 @@ const db = knex({
   },
 });
 
-app.get("/", (req, res) => {
-  db.select("*")
-    .from("users")
-    .then((data) => {
-      res.json(data);
-      console.log("its working");
-    })
-    .catch(console.log);
-});
+// app.get("/", (req, res) => {
+//   db.select("*")
+//     .from("users")
+//     .then((data) => {
+//       res.json(data);
+//       console.log("its working");
+//     })
+//     .catch(console.log);
+// });
 
 app.post("/register", (req, res) => {
   register.handleRegister(req, res, db, bcrypt, saltRounds);

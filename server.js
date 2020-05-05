@@ -26,12 +26,7 @@ const db = knex({
 });
 
 app.get("/", (req, res) => {
-  db.select("*")
-    .from("users")
-    .then((data) => {
-      res.json("it working");
-    })
-    .catch(console.log);
+  res.json("it working");
 });
 
 app.post("/register", (req, res) => {

@@ -45,7 +45,7 @@ app.put("/findface", (req, res) => {
   findface.incrementUserFaceCount(req, res, db);
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 4000);
 
 // app.post("/findfaceurl", (req, res) => {
 //   findface.handleApiCall(req, res);
